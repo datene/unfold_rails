@@ -1,0 +1,59 @@
+.content-box {
+  padding: 100px 0;
+  .header-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .header {
+      width: 200px;
+      h3 {
+        font-size: 45px;
+        color: $brand-color;
+      }
+    }
+  }
+  .content-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .content {
+      line-height: 30px;
+      width: 300px;
+      p {
+        font-size: 16pt;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .content-box {
+    .header-container {
+      .header {
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+  .content-container {
+    .content {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .content-box {
+    .header-container {
+      .header {
+        text-align: right;
+      }
+    }
+  }
+  .content-container {
+    .content {
+      text-align: left;
+    }
+  }
+}

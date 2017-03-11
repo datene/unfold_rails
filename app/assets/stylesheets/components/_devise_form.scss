@@ -1,0 +1,18 @@
+.devise-form-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $brand-mint;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .devise-form {
+    flex: 0 1 500px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(1,1,1,0.3);
+    textarea {
+      height: 200px;
+    }
+  }
+}

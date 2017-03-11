@@ -1,0 +1,26 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .banner-content {
+    h3 {
+      color: $brand-color;
+      margin: 0;
+    }
+    .changing-text-container {
+      height: 15px;
+      #unfold-target {
+        margin-top: 10px;
+        text-decoration: underline;
+      }
+    }
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+  }
+}

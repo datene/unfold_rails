@@ -1,0 +1,14 @@
+<%= render partial: "shared/edit_button", locals: { partial_path: @blog_path } %>
+
+<div class="blogposts">
+  <h2>
+    Blog
+  </h2>
+  <% if @post_collection.is_a?(Array) %>
+    <% @post_collection.each do |post| %>
+    <%= raw(post["description"]) %>
+    <% end %>
+  <% else %>
+    <%= raw(@post_collection["description"]) %>
+  <% end %>
+</div>

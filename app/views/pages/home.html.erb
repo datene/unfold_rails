@@ -1,2 +1,3 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render partial: "shared/banner", locals: { banner_image: "banner.png", banner_home: true } %>
+<%= render partial: "shared/content", locals: { content_hash: @home_text } %>
+<%= render partial: "shared/banner", locals: { banner_image: "animation.gif", banner_home: false } %>

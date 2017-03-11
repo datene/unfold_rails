@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="giphy-image-container" style="background-image:url('https://media.giphy.com/media/26vUw5sYGcqmMDoBy/giphy.gif');"></div>
+      <form action="/" id="giphy-form" class="form-inline">
+        <div class="form-group">
+          <input type="text" id="keyword" name="keyword" class="form-control">
+          <input type="submit" class="btn btn-primary" value="Find me a giphy">
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+
+    </div>
+  </div>
+</div>
+
+
+
+<% content_for :after_js do %>
+<%= javascript_include_tag 'giphy.js' %>
+<% end %>

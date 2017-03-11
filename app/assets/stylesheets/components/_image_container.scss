@@ -1,0 +1,63 @@
+.giphy-image-container {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+.giphy-image-container-small {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.giphy-image-description {
+  span {
+    color: $brand-mint;
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+}
+
+.giphy-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .giphy-featured {
+    span {
+      color: $brand-mint;
+    }
+  }
+}
+
+.message-box {
+  background: #eeeeee;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+.featured-user-container {
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  .img-rounded {
+    margin: 10px 0;
+  }
+  .remove-featured-user {
+    position: absolute;
+    top: 0;
+    right: 20%;
+  }
+  span {
+    color: $brand-mint;
+  }
+}

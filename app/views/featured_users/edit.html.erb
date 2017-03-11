@@ -1,0 +1,61 @@
+<h2 class="text-center marged-top">
+  Edit featured users
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Add a new user
+  </button>
+</h2>
+<p class="text-center">
+  <span>
+    Note:
+  </span>
+  you can highlight text by placing span tags around them e.g.  &lt;span&gt;hello&lt;/span&gt;
+</p>
+
+
+
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    <%= simple_form_for @featured_user, url: about_path do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <% @featured_users.each do |featured_user| %>
+    <div class="col-xs-12 col-lg-6">
+      <div class="featured-user-container">
+        <%= cl_image_tag featured_user.photo, height: 200, width: 200, crop: :fill, class: 'img-rounded' %>
+        <h3>
+          <%= featured_user.name %>
+        </h3>
+        <p>
+          <%= raw(featured_user.description) %>
+        </p>
+        <%= simple_form_for featured_user, url: about_update_path do |f| %>
+        <%= f.input :name %>
+        <%= f.input :id, as: :hidden %>
+        <%= f.input :description %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+        <div class="remove-featured-user">
+        <%= simple_form_for featured_user, url: about_destroy_path, method: :delete do |f| %>
+          <%= f.input :id, as: :hidden %>
+          <%= f.submit value: "remove", class: 'btn btn-danger', data: {confirm: "Are you sure you want to remove #{featured_user.name}?"} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

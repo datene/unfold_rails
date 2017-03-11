@@ -1,0 +1,56 @@
+<%= render partial: "shared/edit_button", locals: { partial_path: @giphy_path } %>
+
+<h2 class="text-center marged">
+  We love giphies, <span>send us one</span>
+</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="giphy-image-container" style="background-image:url('<%= @giphy_default.url %>');"></div>
+      <div class="giphy-search-container">
+        <form action="/" id="giphy-select-form" class="form-inline">
+          <div class="form-group">
+            <input type="text" id="keyword" name="keyword" class="form-control" placeholder="Enter a keyword">
+            <input type="submit" class="btn btn-primary" value="Find me a giphy">
+          </div>
+        </form>
+        <div class="hidden" id="giphy-url-placeholder"></div>
+        <div class="giphy-featured">
+          found by: <span><%= @giphy_default.creator %></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <div class="giphy-form-container">
+        <%= simple_form_for @giphy, url: gifmemore_path do |f| %>
+        <%= f.input :creator, placeholder: "Your name" %>
+        <%= f.input :message, placeholder: "Leave us a message (It won't show on the wall)" %>
+        <%= f.input :url, as: :hidden %>
+        <%= f.submit class: "btn btn-primary", id: "giphy-submit-button", value:"Send your giphy" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <h2 class="text-center marged">
+    All our lovely giphies
+  </h2>
+  <div class="row">
+    <% @giphies.each do |giphy| %>
+    <div class="col-xs-6 col-lg-3">
+      <div class="giphy-image-container-small" style="background-image:url('<%= giphy.url %>');"></div>
+      <div class="giphy-image-description">
+        <p>
+          by <span><%= giphy.creator.downcase %></span>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% content_for :after_js do %>
+<%= javascript_include_tag 'giphy.js' %>
+<% end %>

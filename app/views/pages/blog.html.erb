@@ -1,0 +1,13 @@
+
+<div class="blogposts">
+  <h2>
+    Blog
+  </h2>
+  <% if @post_collection.length == 1 %>
+    <%= raw(@post_collection["description"]) %>
+  <% else %>
+    <% @posts.each do |post| %>
+    <%= raw(post["description"]) %>
+    <% end %>
+  <% end %>
+</div>

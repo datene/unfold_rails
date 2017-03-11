@@ -1,1 +1,14 @@
 // Your footer style
+.footer {
+  height: 150px;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $brand-color;
+  flex-direction: column;
+  p {
+    font-weight: 200;
+  }
+}

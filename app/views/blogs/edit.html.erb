@@ -1,0 +1,14 @@
+<div class="devise-form-wrapper">
+  <div class="devise-form">
+    <%= simple_form_for @blog, url: blog_update_path do |f| %>
+    <%= f.input :user %>
+    <p>
+      <em>
+        Note:
+      </em>
+      Use a '@' for users and just the regular name for organizations.
+    </p>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

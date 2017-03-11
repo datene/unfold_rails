@@ -1,0 +1,23 @@
+<%= render partial: "shared/edit_button", locals: { partial_path: @featured_user_path } %>
+
+<h2 class="text-center marged">
+  who we are
+</h2>
+
+<div class="container">
+  <div class="row">
+    <% @featured_users.each do |featured_user| %>
+    <div class="col-xs-12 col-lg-4">
+      <div class="featured-user-container">
+        <%= cl_image_tag featured_user.photo, height: 200, width: 200, crop: :fill, class: 'img-rounded' %>
+        <h3>
+          <%= featured_user.name %>
+        </h3>
+        <p>
+          <%= raw(featured_user.description) %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

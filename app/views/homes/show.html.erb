@@ -1,0 +1,23 @@
+<%= render partial: "shared/edit_button", locals: { partial_path: @home_path } %>
+<%= render partial: "shared/banner", locals: 
+{ 
+  banner_image: "banner.png", 
+  banner_home: true 
+} %>
+<%= render partial: "shared/content", locals: 
+{ 
+  content_hash: 
+  {
+    content: @home.content, 
+    header: @home.header
+  } 
+} %>
+<%= render partial: "shared/banner", locals: 
+{ 
+  banner_image: "animation.gif", 
+  banner_home: false 
+} %>
+
+<% content_for :after_js do %>
+    <%= javascript_include_tag 'banner.js' %>
+<% end %>

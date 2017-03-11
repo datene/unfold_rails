@@ -1,0 +1,9 @@
+<div class="devise-form-wrapper">
+  <div class="devise-form">
+    <%= simple_form_for @home, url: home_update_path do |f| %>
+    <%= f.input :header %>
+    <%= f.input :content %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
