@@ -4,7 +4,7 @@ $(function(){
   e.preventDefault();
   var url = $('#giphy-url-placeholder').text();
   if (url == "" && !$('.warning-message').length) {
-    $(".giphy-form-container").append('<div class="warning-message">Please select a cool giphy on the left</div>');
+    $(".giphy-form-container").append('<div class="warning-message">Please select a cool giphy</div>');
   }
   else {
     $('#giphy_url').val(url);

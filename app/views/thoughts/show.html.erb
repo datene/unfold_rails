@@ -1,0 +1,19 @@
+<%= render partial: "shared/edit_button", locals: { partial_path: @thought_path } %>
+
+<div class="container">
+  <h2 class="text-center marged-small">
+    <%= @thought.header %>
+  </h2>
+  <div class="row">
+    <div class="col-xs-12 col-lg-5 col-lg-offset-1">
+      <div class="giphy-image-container giphy-image-container-medium" style="background-image:url('<%= @thought.photo %>')"></div>
+    </div>
+    <div class="col-xs-12 col-lg-5">
+      <div class="content-box-simple">
+        <p>
+          <%= @thought.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

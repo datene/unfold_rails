@@ -1,0 +1,12 @@
+<%= render partial: "shared/edit_button", locals: { partial_path: @activity_path } %>
+
+<div class="content-box-cover" style="background-image: url(<%= @activity.photo %>);">
+  <div class="content-box-content-container">
+    <h2>
+      <%= @activity.header %>
+    </h2>
+    <p>
+      <%= @activity.description %>
+    </p>
+  </div>
+</div>

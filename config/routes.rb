@@ -9,8 +9,15 @@ Rails.application.routes.draw do
   root to: 'homes#show'
 
 
-  get '/why', to: 'pages#why'
-  get '/what', to: 'pages#what'
+  get '/why', to: 'thoughts#show'
+  get '/why/edit', to: 'thoughts#edit'
+  patch '/why/update', to: 'thoughts#update'
+
+  get '/what', to: 'activities#show'
+  get '/what/edit', to: 'activities#edit'
+  patch '/what/update', to: 'activities#update'
+
+
   get '/how', to: 'pages#how'
   get '/contact', to: 'pages#contact'
 

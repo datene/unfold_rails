@@ -1,4 +1,5 @@
 .content-box {
+  box-shadow: 0px 0px 5px rgba(1,1,1,0.1);
   padding: 100px 0;
   .header-container {
     display: flex;
@@ -54,6 +55,23 @@
   .content-container {
     .content {
       text-align: left;
+    }
+  }
+}
+
+.content-box-simple {
+  p {
+    line-height: 2;
+  }
+}
+
+.content-box-cover {
+  .content-box-content-container {
+    h2 {
+
+    }
+    p {
+      
     }
   }
 }

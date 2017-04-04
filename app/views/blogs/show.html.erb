@@ -4,11 +4,19 @@
   <h2>
     Blog
   </h2>
-  <% if @post_collection.is_a?(Array) %>
-    <% @post_collection.each do |post| %>
-    <%= raw(post["description"]) %>
-    <% end %>
-  <% else %>
-    <%= raw(@post_collection["description"]) %>
-  <% end %>
+  <div class="container">
+    <div class="row">
+      <% if @post_collection.is_a?(Array) %>
+      <% @post_collection.each do |post| %>
+      <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+        <%= raw(post["description"]) %>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+        <%= raw(@post_collection["description"]) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,11 @@
+<div class="devise-form-wrapper">
+  <div class="devise-form">
+  <%= simple_form_for @activity, url: what_update_path do |f| %>
+    <%= f.input :header %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
